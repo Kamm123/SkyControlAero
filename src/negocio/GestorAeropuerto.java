@@ -60,7 +60,7 @@ public class GestorAeropuerto {
         return false;
     }
 
-    // --- MODULO 1: VUELOS ---
+    // MODULO 1: VUELOS 
     public Vuelo buscarVueloUsuario(String cod) {
         if (!haySesionActiva()) return null;
         for (Vuelo v : vuelos) {
@@ -84,7 +84,7 @@ public class GestorAeropuerto {
         v.setEstado(est);
         v.setMotivo(mot);
 
-        // Actualizacion automatica operativa de maletas segun avance del vuelo
+        
         for (Equipaje eq : equipajes) {
             if (eq.getCodigoVuelo().equalsIgnoreCase(cod) && !eq.getEstado().equals("EXTRAVIADO")) {
                 if (est.equals("Cancelado")) {
@@ -118,7 +118,7 @@ public class GestorAeropuerto {
         return c == 0 ? "No tiene vuelos registrados." : txt;
     }
 
-    // --- MODULO 2: PUERTAS ---
+    // MODULO 2: PUERTAS 
     public Puerta buscarPuerta(String id) {
         for (Puerta p : puertas) if (p.getIdPuerta().equalsIgnoreCase(id)) return p;
         return null;
@@ -187,7 +187,7 @@ public class GestorAeropuerto {
         return txt;
     }
 
-    // --- MODULO 3: EQUIPAJE ---
+    // MODULO 3: EQUIPAJE 
     public Equipaje buscarEquipaje(String etiq) {
         for (Equipaje e : equipajes) if (e.getEtiqueta().equalsIgnoreCase(etiq)) return e;
         return null;
