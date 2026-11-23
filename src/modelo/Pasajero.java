@@ -24,4 +24,4 @@ public String getCedula() { return cedula; }
 
 public String getNombre() { return nombre; }
 
-} en pasajero eso no se pq me sael asi como en ela foto
+}
